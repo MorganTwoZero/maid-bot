@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  maidbot:
+    image: maidbot
+    build:
+      context: .
+      dockerfile: ./Dockerfile
