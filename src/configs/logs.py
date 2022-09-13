@@ -31,7 +31,7 @@ LOGGING_CONFIG = {
         },
         'cleaning_cog': {
             'handlers': ['stream_handler', 'logfile'],
-            'level': 'DEBUG',
+            'level': 'INFO',
             'propagate': True
         }
     }

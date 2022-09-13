@@ -31,12 +31,12 @@ class Cleaning(Cog):
 
     @tasks.loop(minutes=5)
     async def clean(self):
-        for channel in self._channels:
-            logger.info('Cleaning channel "%s"', channel.name)
+        ttl = datetime.datetime.now() - datetime.timedelta(days=1)
 
-            ttl = datetime.datetime.now() - datetime.timedelta(days=1)
+        for channel in self._channels:
             res = await channel.purge(before=ttl)
-            logger.debug("Deleted %s messages", len(res))
+            if len(res) != 0:
+                logger.debug("Deleted %s messages", len(res))
 
     @slash_command(name='purge')
     async def purge(self, ctx: ApplicationContext, limit: int):
