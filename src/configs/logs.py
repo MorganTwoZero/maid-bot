@@ -24,6 +24,11 @@ LOGGING_CONFIG = {
         },
     },
     'loggers': {
+        'root': {
+            'handlers': ['stream_handler', 'logfile'],
+            'level': 'INFO',
+            'propagate': True
+        },
         'main': {
             'handlers': ['stream_handler', 'logfile'],
             'level': 'INFO',
