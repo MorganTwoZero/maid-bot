@@ -9,3 +9,6 @@ Add a save channel to file feature for keep_clean func
 
 # 1.1.2 2022.09.18
 Докеру непонравились [ символы в .env файле. Переименовал .env в tokens.env
+
+# 1.1.3 2022.09.18
+Починил дублирубщиеся сообщения в логах

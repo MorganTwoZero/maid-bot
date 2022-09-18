@@ -28,16 +28,6 @@ LOGGING_CONFIG = {
             'handlers': ['stream_handler', 'logfile'],
             'level': 'INFO',
             'propagate': True
-        },
-        'main': {
-            'handlers': ['stream_handler', 'logfile'],
-            'level': 'INFO',
-            'propagate': True
-        },
-        'cleaning_cog': {
-            'handlers': ['stream_handler', 'logfile'],
-            'level': 'INFO',
-            'propagate': True
         }
     }
 }
