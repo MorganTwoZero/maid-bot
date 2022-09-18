@@ -1,16 +1,15 @@
 import logging
-import os
 
 import discord
-from dotenv import load_dotenv
+import iniconfig
 
+# Imported for initialisation
 from configs.logs import config
 import cleaning_cog
 
-load_dotenv()
 
-TOKEN = os.getenv("TOKEN")
-
+ini = iniconfig.IniConfig(".env")
+TOKEN = ini["tokens"]["PROD"]
 
 logger = logging.getLogger('main')
 
