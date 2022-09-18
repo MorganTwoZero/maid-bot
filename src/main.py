@@ -8,7 +8,7 @@ from configs.logs import config
 import cleaning_cog
 
 
-ini = iniconfig.IniConfig(".env")
+ini = iniconfig.IniConfig("tokens.env")
 TOKEN = ini["tokens"]["PROD"]
 
 logger = logging.getLogger('main')

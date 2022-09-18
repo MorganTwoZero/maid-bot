@@ -3,6 +3,6 @@
 pyrightconfig.json
 __pypackages__
 discord.log
-.env
+tokens.env
 **/*.pyc
 channels.txt
