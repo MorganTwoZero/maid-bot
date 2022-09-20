@@ -1,6 +1,4 @@
-.vscode
 .pdm.toml
-pyrightconfig.json
 __pypackages__
 discord.log
 tokens.env
