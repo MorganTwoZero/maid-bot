@@ -6,16 +6,19 @@ from discord import (
     ApplicationContext,
     Bot,
     Cog,
+    Forbidden,
     Interaction,
+    InvalidData,
+    NotFound,
     TextChannel,
     slash_command,
 )
-from discord.ext import tasks
+from discord.ext import tasks  # type: ignore
 
 from utils import file
 
-
 logger = logging.getLogger(__name__)
+
 
 class Cleaning(Cog):
 
@@ -24,10 +27,10 @@ class Cleaning(Cog):
         self.bot = bot
         self._channels: set[TextChannel] = set()
         self._file_name = "channels.txt"
-        self.clean.start()
+        self.clean.start()  # pylint: disable=no-member
 
     @Cog.listener(name="on_connect")
-    async def _load_channels(self):
+    async def _load_channels(self) -> None:
         if os.path.exists(self._file_name):
             try:
                 for channel_id in file.read_file(self._file_name):
@@ -35,13 +38,19 @@ class Cleaning(Cog):
                     assert isinstance(channel_obj, TextChannel)
                     self._channels.add(channel_obj)
                     logger.debug("Loaded channel id %s from file", channel_id)
-            except Exception as e:
+            except FileNotFoundError as e:
+                logger.exception(e)
+            except InvalidData as e:
+                logger.exception(e)
+            except NotFound as e:
+                logger.exception(e)
+            except Forbidden as e:
                 logger.exception(e)
 
     # utils
-    @tasks.loop(minutes=5)
-    async def clean(self):
-        # TODO arbitrary ttl feature
+    @tasks.loop(minutes=5)  # type: ignore
+    async def clean(self) -> None:
+        # TODO arbitrary ttl feature  # pylint: disable=fixme
         ttl = datetime.datetime.now() - datetime.timedelta(days=1)
 
         for channel in self._channels:
@@ -50,11 +59,11 @@ class Cleaning(Cog):
                 logger.debug('Deleted %s messages in "%s"', len(res), channel.name)
 
     # commands
-    @slash_command()
+    @slash_command()  # type: ignore
     async def keep_clean(
         self,
         ctx: ApplicationContext,
-    ):
+    ) -> None:
         """Удаляет все сообщения старше одного дня."""
         if ctx.channel in self._channels:
             response = await ctx.respond("Я и так тут регулярно убираюсь!")
@@ -72,11 +81,17 @@ class Cleaning(Cog):
             response = await ctx.respond("Оке, удаляю всё старше одного дня")
             assert isinstance(response, Interaction)
             await response.delete_original_message(delay=5)
-        except Exception as e:
+        except FileNotFoundError as e:
+            await ctx.respond(f"Ошибка! Детали: {e}")
+        except InvalidData as e:
+            await ctx.respond(f"Ошибка! Детали: {e}")
+        except NotFound as e:
+            await ctx.respond(f"Ошибка! Детали: {e}")
+        except Forbidden as e:
             await ctx.respond(f"Ошибка! Детали: {e}")
 
-    @slash_command(name="purge")
-    async def purge(self, ctx: ApplicationContext, limit: int):
+    @slash_command(name="purge")  # type: ignore
+    async def purge(self, ctx: ApplicationContext, limit: int) -> None:
         """Удаляет `limit` сообщений."""
 
         try:
@@ -87,9 +102,13 @@ class Cleaning(Cog):
             response = await ctx.respond(f"Удалила {len(res)} сообщений")
             assert isinstance(response, Interaction)
             await response.delete_original_message(delay=5)
-        except Exception as e:
+        except InvalidData as e:
+            logger.exception(e)
+        except NotFound as e:
+            logger.exception(e)
+        except Forbidden as e:
             logger.exception(e)
 
 
-def setup(bot: Bot):
+def setup(bot: Bot) -> None:
     bot.add_cog(Cleaning(bot))

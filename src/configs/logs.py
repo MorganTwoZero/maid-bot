@@ -1,6 +1,5 @@
 import logging.config
 
-
 LOGGING_CONFIG = {
     "version": 1,
     "disable_existing_loggers": False,
@@ -22,4 +21,4 @@ LOGGING_CONFIG = {
     "loggers": {"root": {"handlers": ["stream_handler", "logfile"], "level": "INFO", "propagate": True}},
 }
 
-config = logging.config.dictConfig(LOGGING_CONFIG)
+logging.config.dictConfig(LOGGING_CONFIG)

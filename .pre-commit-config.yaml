@@ -67,15 +67,11 @@ repos:
             "flake8-implicit-str-concat",
             "flake8-noqa",
           ]
-  - repo: https://github.com/johnfraney/flake8-markdown
-    rev: v0.3.0
-    hooks:
-      - id: flake8-markdown
   - repo: https://github.com/pycqa/pylint
     rev: "v2.14.5"
     hooks:
       - id: pylint
-        args: ["--unsafe-load-any-extension=y"]
+        args: ["--unsafe-load-any-extension=y", "--disable=C0115,C0116,C0103"]
         additional_dependencies: ["py-cord"]
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: "v0.971"

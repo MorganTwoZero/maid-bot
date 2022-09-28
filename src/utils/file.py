@@ -1,7 +1,7 @@
 import logging
 
-
 logger = logging.getLogger(__name__)
+
 
 def read_file(file_name: str) -> list[int]:
     try:
