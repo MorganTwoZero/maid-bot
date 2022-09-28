@@ -63,7 +63,7 @@ class Cleaning(Cog):
             file.save_channel_id(self._file_name, ctx.channel.id)
             logger.info('Channel "%s" saved for cleaning', ctx.channel.name)
 
-            response = await ctx.respond(f"Оке, удаляю всё старше одного дня")
+            response = await ctx.respond("Оке, удаляю всё старше одного дня")
             assert isinstance(response, Interaction)
             await response.delete_original_message(delay=5)
         except Exception as e:
