@@ -20,6 +20,13 @@ test = [
     "pytest-asyncio>=0.19.0",
     "pytest-recording>=0.12.1",
 ]
+black = "*"
+flake8 = "*"
+mypy = "*"
+pre-commit = "*"
+pylint = "*"
+pytest = "*"
+pytest-cov = "*"
 
 [build-system]
 requires = ["pdm-pep517>=1.0.0"]
@@ -28,3 +35,55 @@ build-backend = "pdm.pep517.api"
 [tool.pdm.scripts]
 start = "python src/main.py"
 dev = "watchfiles --filter python 'python src/main.py' ./src"
+
+[tool.black]
+line-length = 120
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+
+[tool.coverage.report]
+show_missing = true
+exclude_lines = [
+    'if TYPE_CHECKING:',
+    'pragma: no cover',
+    "if __name__ == '__main__':",
+]
+
+[tool.coverage.run]
+omit = [
+    "tests/*",
+]
+
+[tool.mypy]
+check_untyped_defs = true
+disallow_any_generics = false
+disallow_incomplete_defs = true
+disallow_untyped_decorators = true
+disallow_untyped_defs = true
+ignore_missing_imports = true
+implicit_reexport = false
+show_error_codes = true
+strict = true
+warn_redundant_casts = true
+warn_return_any = true
+warn_unreachable = true
+warn_unused_configs = true
+warn_unused_ignores = true
+
+[tool.pytest.ini_options]
+addopts = "--cov=main -v"
+
+[tool.pylint.MESSAGE_CONTROL]
+disable = [
+    "missing-module-docstring",
+]
+enable = "useless-suppression"
+
+[tool.pylint.BASIC]
+no-docstring-rgx="test.*$"
+
+[tool.pylint.FORMAT]
+max-line-length = "120"

@@ -2,14 +2,20 @@ import datetime
 import logging
 import os
 
-from discord import ApplicationContext, Bot, Cog, slash_command, Interaction, TextChannel
+from discord import (
+    ApplicationContext,
+    Bot,
+    Cog,
+    Interaction,
+    TextChannel,
+    slash_command,
+)
 from discord.ext import tasks
 
 from utils import file
 
 
 logger = logging.getLogger(__name__)
-
 
 class Cleaning(Cog):
 
@@ -49,7 +55,7 @@ class Cleaning(Cog):
         self,
         ctx: ApplicationContext,
     ):
-        """Удаляет все сообщения старше одного дня"""
+        """Удаляет все сообщения старше одного дня."""
         if ctx.channel in self._channels:
             response = await ctx.respond("Я и так тут регулярно убираюсь!")
             assert isinstance(response, Interaction)
@@ -71,7 +77,7 @@ class Cleaning(Cog):
 
     @slash_command(name="purge")
     async def purge(self, ctx: ApplicationContext, limit: int):
-        """Удаляет `limit` сообщений"""
+        """Удаляет `limit` сообщений."""
 
         try:
             assert isinstance(ctx.channel, TextChannel)
