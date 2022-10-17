@@ -173,7 +173,7 @@ summary = "library with cross-python path, ini-parsing, io, code, log facilities
 
 [[package]]
 name = "py-cord"
-version = "2.1.3"
+version = "2.2.0"
 requires_python = ">=3.8.0"
 summary = "A Python wrapper for the Discord API"
 dependencies = [
@@ -212,7 +212,7 @@ dependencies = [
 
 [[package]]
 name = "pytest-cov"
-version = "3.0.0"
+version = "4.0.0"
 requires_python = ">=3.6"
 summary = "Pytest plugin for measuring coverage."
 dependencies = [
@@ -691,9 +691,9 @@ content_hash = "sha256:ee0d887b48570cc12b9026400cc16d55708a89943c2a9e12ee4878670
     {url = "https://files.pythonhosted.org/packages/98/ff/fec109ceb715d2a6b4c4a85a61af3b40c723a961e8828319fbcb15b868dc/py-1.11.0.tar.gz", hash = "sha256:51c75c4126074b472f746a24399ad32f6053d1b34b68d2fa41e558e6f4a98719"},
     {url = "https://files.pythonhosted.org/packages/f6/f0/10642828a8dfb741e5f3fbaac830550a518a775c7fff6f04a007259b0548/py-1.11.0-py2.py3-none-any.whl", hash = "sha256:607c53218732647dff4acdfcd50cb62615cedf612e72d1724fb1a0cc6405b378"},
 ]
-"py-cord 2.1.3" = [
-    {url = "https://files.pythonhosted.org/packages/ed/6a/719898a8baedc7f2abe1eb505f90df881a0339270fdb115283c83b040c7d/py-cord-2.1.3.tar.gz", hash = "sha256:416ce7f62e5d413eb24ff2aae5b0ed87019ed2e8af35519baf1aff3a7a9f1821"},
-    {url = "https://files.pythonhosted.org/packages/f0/0b/322a3f4fbeedb5a334cc58fd1e4b8886d8ed986e8d82a4eebb0e26335044/py_cord-2.1.3-py3-none-any.whl", hash = "sha256:f6f80db2135aaa203ff1bb70ce4d5605a74467b12dd30e9e342ad8eb015593f0"},
+"py-cord 2.2.0" = [
+    {url = "https://files.pythonhosted.org/packages/dd/92/f357427de513b20f6f72364116022e2eb14f3f9942b2c99fb9b179e839a6/py-cord-2.2.0.tar.gz", hash = "sha256:940297b58c79cc352f78fffe7d1259ccf05f598d17af0ee11d16513731ed5c2b"},
+    {url = "https://files.pythonhosted.org/packages/ec/21/1d60ee38514808afb2f940892a78edc6efce26e12124f0e958018431aa00/py_cord-2.2.0-py3-none-any.whl", hash = "sha256:990acd3a646efa413f75f4eb812fe16af289de4f8563d25935e5fbe1c3fa50a4"},
 ]
 "pyparsing 3.0.9" = [
     {url = "https://files.pythonhosted.org/packages/6c/10/a7d0fa5baea8fe7b50f448ab742f26f52b80bfca85ac2be9d35cdd9a3246/pyparsing-3.0.9-py3-none-any.whl", hash = "sha256:5026bae9a10eeaefb61dab2f09052b9f4307d44aee4eda64b309723d8d206bbc"},
@@ -707,9 +707,9 @@ content_hash = "sha256:ee0d887b48570cc12b9026400cc16d55708a89943c2a9e12ee4878670
     {url = "https://files.pythonhosted.org/packages/43/1c/4293ce5ddfd1db78fbf192bd3c47183c9ecc2816b8de382ed1b2491c7cea/pytest-asyncio-0.19.0.tar.gz", hash = "sha256:ac4ebf3b6207259750bc32f4c1d8fcd7e79739edbc67ad0c58dd150b1d072fed"},
     {url = "https://files.pythonhosted.org/packages/6e/c8/a3427a51eca28634efdbe6d5dd39a091a710bf9f14d745220f032fcbcb87/pytest_asyncio-0.19.0-py3-none-any.whl", hash = "sha256:7a97e37cfe1ed296e2e84941384bdd37c376453912d397ed39293e0916f521fa"},
 ]
-"pytest-cov 3.0.0" = [
-    {url = "https://files.pythonhosted.org/packages/20/49/b3e0edec68d81846f519c602ac38af9db86e1e71275528b3e814ae236063/pytest_cov-3.0.0-py3-none-any.whl", hash = "sha256:578d5d15ac4a25e5f961c938b85a05b09fdaae9deef3bb6de9a6e766622ca7a6"},
-    {url = "https://files.pythonhosted.org/packages/61/41/e046526849972555928a6d31c2068410e47a31fb5ab0a77f868596811329/pytest-cov-3.0.0.tar.gz", hash = "sha256:e7f0f5b1617d2210a2cabc266dfe2f4c75a8d32fb89eafb7ad9d06f6d076d470"},
+"pytest-cov 4.0.0" = [
+    {url = "https://files.pythonhosted.org/packages/ea/70/da97fd5f6270c7d2ce07559a19e5bf36a76f0af21500256f005a69d9beba/pytest-cov-4.0.0.tar.gz", hash = "sha256:996b79efde6433cdbd0088872dbc5fb3ed7fe1578b68cdbba634f14bb8dd0470"},
+    {url = "https://files.pythonhosted.org/packages/fe/1f/9ec0ddd33bd2b37d6ec50bb39155bca4fe7085fa78b3b434c05459a860e3/pytest_cov-4.0.0-py3-none-any.whl", hash = "sha256:2feb1b751d66a8bd934e5edfa2e961d11309dc37b73b0eabe73b5945fee20f6b"},
 ]
 "pytest-forked 1.4.0" = [
     {url = "https://files.pythonhosted.org/packages/0c/36/c56ef2aea73912190cdbcc39aaa860db8c07c1a5ce8566994ec9425453db/pytest_forked-1.4.0-py3-none-any.whl", hash = "sha256:bbbb6717efc886b9d64537b41fb1497cfaf3c9601276be8da2cccfea5a3c8ad8"},
