@@ -9,7 +9,7 @@ import cat_cog  # noqa: F401  # pylint: disable=unused-import
 import configs.logs  # noqa: F401  # pylint: disable=unused-import
 
 ini = iniconfig.IniConfig("tokens.env")
-TOKEN = ini["tokens"]["DEV"]
+TOKEN = ini["tokens"]["PROD"]
 
 logger = logging.getLogger("main")
 
