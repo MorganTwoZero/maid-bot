@@ -1,5 +1,6 @@
 services:
   maidbot:
+    restart: always
     image: maidbot
     build:
       context: .
