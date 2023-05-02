@@ -1,17 +1,11 @@
-from io import BytesIO
 import logging
+from io import BytesIO
 
+from discord import ApplicationContext, Bot, Cog, File, slash_command
+from httpx import get
 from PIL import Image, ImageDraw, ImageFont, ImageSequence
 from PIL.Image import Image as ImageType
 from PIL.ImageDraw import ImageDraw as DrawerType
-from httpx import get
-from discord import (
-    ApplicationContext,
-    Bot,
-    Cog,
-    File,
-    slash_command,
-)
 
 logger = logging.getLogger(__name__)
 

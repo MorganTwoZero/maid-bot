@@ -21,7 +21,6 @@ logger = logging.getLogger(__name__)
 
 
 class Cleaning(Cog):
-
     # init
     def __init__(self, bot: Bot):
         self.bot = bot

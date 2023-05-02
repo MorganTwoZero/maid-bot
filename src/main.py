@@ -3,9 +3,10 @@ import logging
 import discord
 import iniconfig
 
+import cat_cog  # noqa: F401  # pylint: disable=unused-import
+
 # Imported for initialisation
 import cleaning_cog  # noqa: F401  # pylint: disable=unused-import
-import cat_cog  # noqa: F401  # pylint: disable=unused-import
 import configs.logs  # noqa: F401  # pylint: disable=unused-import
 
 ini = iniconfig.IniConfig("tokens.env")
